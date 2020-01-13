@@ -1,9 +1,9 @@
 import csv
 
-movies_csv_file = open("ml-25m\\movies.csv", "r", encoding="UTF8")
-links_csv_file = open("ml-25m\\links.csv", "r", encoding="UTF8")
-tags_csv_file = open("ml-25m\\tags.csv", "r", encoding="UTF8")
-ratings_csv_file = open("ml-25m\\ratings.csv", encoding="UTF8")
+movies_csv_file = open("movieLens\\movies.csv", "r", encoding="UTF8")
+links_csv_file = open("movieLens\\links.csv", "r", encoding="UTF8")
+tags_csv_file = open("movieLens\\tags.csv", "r", encoding="UTF8")
+ratings_csv_file = open("movieLens\\ratings.csv", encoding="UTF8")
 movies_csv = csv.reader(movies_csv_file)
 links_csv = csv.reader(links_csv_file)
 tags_csv = csv.reader(tags_csv_file)
@@ -37,4 +37,5 @@ for tag in tags_csv:
 for movie in movies:
     if movie.get('Tags')==[]:
         movie.pop('Tags')
-    print(movie)
+    if (movie!={}):
+        print(movie)
