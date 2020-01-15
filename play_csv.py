@@ -1,10 +1,10 @@
 import csv
 import os
 
-movies_csv_file = open(os.path.join('movieLens', 'movies.csv'), "r", encoding="UTF8")
-links_csv_file = open(os.path.join('movieLens', 'links.csv'), "r", encoding="UTF8")
-tags_csv_file = open(os.path.join('movieLens', 'tags.csv'), "r", encoding="UTF8")
-ratings_csv_file = open(os.path.join('movieLens', 'ratings.csv'), encoding="UTF8")
+movies_csv_file = open(os.path.join('movieLens', 'movies.csv'), "r")
+links_csv_file = open(os.path.join('movieLens', 'links.csv'), "r")
+tags_csv_file = open(os.path.join('movieLens', 'tags.csv'), "r")
+ratings_csv_file = open(os.path.join('movieLens', 'ratings.csv'))
 movies_csv = csv.reader(movies_csv_file)
 links_csv = csv.reader(links_csv_file)
 tags_csv = csv.reader(tags_csv_file)

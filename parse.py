@@ -2,8 +2,10 @@ import play_csv
 import string
 from nltk.tokenize import word_tokenize, sent_tokenize
 from gensim.models.word2vec import Word2Vec
+import sys 
+import json
 
-text = ['action movie will ferrell']
+text = [sys.argv[1]]
 movies = play_csv.play_csv()
 
 
@@ -52,7 +54,6 @@ def parse(user_input):
 def get_similarities(user_input):
     words = parse(user_input)
     data_set = get_data_set()
-    print('Start')
     cbow_model = Word2Vec(data_set, min_count=1, size=100, window=10)
     similarities = []
     for word in words:
@@ -76,7 +77,7 @@ def get_recommendations(user_input):
     top_movies = []
     for i in range(10):
         top_movies.append(sorted_movies[i])
-    print(top_movies)
+    print(json.dumps(top_movies))
 
 
 get_recommendations(text)
