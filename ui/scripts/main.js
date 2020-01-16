@@ -1,6 +1,7 @@
 search = () => {
     let query = document.getElementById('searchField').value;
     console.log(query);
+    document.getElementById('cont').classList.add('colorful');
     document.getElementById('list').innerHTML = `
     <div class="list-load"></div>
     <div class="list-load reverse"></div>
@@ -49,6 +50,7 @@ search = () => {
         } else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
             console.log(this.response)
         }
+        document.getElementById('cont').classList.remove('colorful');
     }
     xhr.send(JSON.stringify({ query: query }));
 }

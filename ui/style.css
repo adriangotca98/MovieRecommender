@@ -15,6 +15,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: 2s all ease-in-out;
 }
 
 .header {
@@ -153,4 +154,33 @@ body {
 
 .reverse {
   animation-direction: reverse;
+}
+
+@keyframes colors {
+  0% {
+    background-color: rgb(250, 166, 56);
+  }
+
+  25% {
+    background-color: rgb(49, 168, 113);
+  }
+
+  50% {
+    background-color: rgb(50, 103, 173);
+  }
+
+  75% {
+    background-color: rgb(237, 215, 250);
+  }
+
+  100% {
+    background-color: rgb(255, 170, 59);
+  }
+}
+
+.colorful {
+  animation-name: colors;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
