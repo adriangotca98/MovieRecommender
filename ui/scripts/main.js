@@ -10,6 +10,7 @@ search = () => {
     xhr.open("POST", 'http://localhost:3000/search', true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function (ev) {
+        document.getElementById('list').innerHTML = '';
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let list = JSON.parse(this.response);
             console.log(list);

@@ -87,6 +87,12 @@ body {
   padding: 1rem;
   width: 100%;
   margin: 1rem 0 1rem 0;
+  transition: all 1s ease-in-out;
+}
+
+.movie-list > .movie:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .movie > .title {
@@ -180,7 +186,7 @@ body {
 
 .colorful {
   animation-name: colors;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
